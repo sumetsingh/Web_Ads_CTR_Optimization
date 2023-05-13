@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histogram of Ads Selections</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap">
+  <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+  <style>
+    /* Add some styles to make the webpage look more attractive */
+    body {
+      background: linear-gradient(to right,
+          rgb(176, 85, 222)10%,
+          rgb(238, 194, 48) 90%);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Baloo Bhai', cursive;
+      font-size: 2.2rem;
+      line-height: 2.4em;
+      color: rgb(15, 15, 16);
+    }
+
+    img {
+      width: 60%;
+      margin: auto;
+      display: block;
+    }
+
+    p {
+
+      text-align: justify;
+      margin-top: 20px;
+      font-family: 'Josefin Sans';
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: black;
+    }
+
+    .container p {
+      text-align: center;
+      color: rgb(250, 7, 7);
+    }
+
+    small {
+      color: darkred;
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Histogram of Ads Selections</h1>
+  <img src="{{ url_for('static', filename='ads_selection.png') }}" alt="Histogram of ads selections">
+  <br><br>
+  <p style="text-align:center;">This histogram shows the number of times each ad was selected by the UCB algorithm.<br> The x-axis represents the ads,
+    and the y-axis represents the number of times each ad was selected. <br>It can help you to decide which ads to invest
+    your budget in.</p>
+  
+  <br><br>
+  <centre><img src="{{ url_for('static', filename='true_clicks.png') }}" alt="Histogram of ads selections"></centre>
+  <br><br>
+  <p style="text-align:center;">The best ad can be found by<br>
+    <small>best_ad = sums_of_rewards_of_each_ads.<br>
+        index<br>(max(sums_of_rewards_of_each_ads))</small>and it will give you  the  ad which is performing best among the ads.</p>
+ 
+  <div class="container">
+    <p>Best Ad: {{ bestad+1 }}</p>
+  </div>
+</body>
+
+</html>
